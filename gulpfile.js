@@ -41,7 +41,6 @@ const scripts = () => gulp.src('source/assets/js/**/*.js')
 // PHP
 const php = () => gulp.src('source/assets/php/**/*.php')
   .pipe(gulp.dest('build/assets/php'))
-  .pipe(browser.stream());
 
 // Images
 
