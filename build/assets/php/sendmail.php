@@ -122,4 +122,21 @@ $roistatData = array(
 	 '1149265' => 824245
     ),
 );
+  
+file_get_contents("https://cloud.roistat.com/api/proxy/1.0/leads/add?" . http_build_query($roistatData));
+	
+
+    if($result) {
+        echo "true";
+    } else {
+        echo "false";
+    }
+	   
+   }else{
+	   
+	   echo "BOT";
+	   
+   }
+
+
 ?>
