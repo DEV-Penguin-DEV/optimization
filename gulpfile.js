@@ -48,7 +48,7 @@ const php = () => gulp.src('source/assets/php/**/*.php')
 const optimizeImages = () => gulp.src('source/assets/img/**/*.{png,jpg,jpeg}')
   .pipe(imagemin())
   .pipe(gulp.dest('build/assets/img'));
-const copyIco = () => gulp.src('source/assets/img/**/*.{ico}')
+const copyIco = () => gulp.src('source/assets/img/favicons/*.{ico,webmanifest}')
   .pipe(gulp.dest('build/assets/img/favicons'));
 
 const copyImages = () => gulp.src('source/assets/img/**/*.{png,jpg,jpeg,ico,webmanifest}')
