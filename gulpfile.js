@@ -51,7 +51,7 @@ const optimizeImages = () => gulp.src('source/assets/img/**/*.{png,jpg,jpeg}')
 const copyIco = () => gulp.src('source/assets/img/**/*.{ico}')
   .pipe(gulp.dest('build/assets/img/favicons'));
 
-const copyImages = () => gulp.src('source/assets/img/**/*.{png,jpg,jpeg,ico}')
+const copyImages = () => gulp.src('source/assets/img/**/*.{png,jpg,jpeg,ico,webmanifest}')
   .pipe(gulp.dest('build/assets/img'));
 
 
@@ -70,6 +70,11 @@ const svg = () =>
     .pipe(svgo())
     .pipe(gulp.dest('build/assets/img'));
 
+
+// Fonts
+const fonts = () =>
+  gulp.src('source/assets/fonts/**/*')
+    .pipe(gulp.dest('build/assets/fonts'));
 
 // Clean
 
@@ -116,6 +121,7 @@ export const build = gulp.series(
     html,
     php,
     scripts,
+    fonts,
     svg
   ),
   gulp.series(
@@ -133,6 +139,7 @@ export default gulp.series(
     html,
     php,
     scripts,
+    fonts,
     svg
   ),
   gulp.series(
